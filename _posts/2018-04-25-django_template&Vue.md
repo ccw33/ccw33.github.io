@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "django中template和vue结合（非逼于无奈不要这样）"
+title:  "django中template和vue结合"
 categories: Vue
 tags:  Django Template Vue 工作经验
 author: 陈超文
@@ -8,8 +8,7 @@ author: 陈超文
 
 * content
 {:toc}
-
-
+非逼于无奈不要这样用
 
 
 
