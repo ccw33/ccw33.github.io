@@ -26,13 +26,13 @@ enhanced-mode-by-rule = true
 
 
 [Proxy]
-🇭🇰 HK-SERVER1 = custom,120.132.120.173,8888,https://cdn.qingjie.me:443/surge/ss.module
-🇭🇰 HK-SERVER2 = custom,120.132.120.173,8888,https://cdn.qingjie.me:443/surge/ss.module
-🇭🇰 HK-SERVER3 = custom,120.132.120.173,8888,https://cdn.qingjie.me:443/surge/ss.module
-🇰🇷 KR-SERVER = custom,120.132.120.173,8888,https://cdn.qingjie.me:443/surge/ss.module
-🇯🇵 JP-SERVER1 = custom,120.132.120.173,8888,https://cdn.qingjie.me:443/surge/ss.module
-🇯🇵 JP-SERVER2 = custom,120.132.120.173,8888,https://cdn.qingjie.me:443/surge/ss.module
-🇺🇸 US-SERVER = custom,120.132.120.173,8888,https://cdn.qingjie.me:443/surge/ss.module
+🇭🇰 HK-SERVER1 = custom,120.132.120.173,8888,,,https://cdn.qingjie.me:443/surge/ss.module
+🇭🇰 HK-SERVER2 = custom,120.132.120.173,8888,,,https://cdn.qingjie.me:443/surge/ss.module
+🇭🇰 HK-SERVER3 = custom,120.132.120.173,8888,,,https://cdn.qingjie.me:443/surge/ss.module
+🇰🇷 KR-SERVER = custom,120.132.120.173,8888,,,https://cdn.qingjie.me:443/surge/ss.module
+🇯🇵 JP-SERVER1 = custom,120.132.120.173,8888,,,https://cdn.qingjie.me:443/surge/ss.module
+🇯🇵 JP-SERVER2 = custom,120.132.120.173,8888,,,https://cdn.qingjie.me:443/surge/ss.module
+🇺🇸 US-SERVER = custom,120.132.120.173,8888,,,https://cdn.qingjie.me:443/surge/ss.module
 
 [Proxy Group]
 🎲 Cluster = url-test, DIRECT, 🇭🇰 HK-SERVER1, 🇭🇰 HK-SERVER2, url = http://www.gstatic.com/generate_204, interval = 600, timeout = 5, tolerance = 200
