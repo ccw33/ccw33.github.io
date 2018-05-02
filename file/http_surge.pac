@@ -10,6 +10,9 @@ Http2 = http,202.117.97.239,8123
 Http3 = http,183.63.254.253,1080
 Http4 = http,115.154.38.107,8123
 Http5 = http,202.116.160.104,3128
+Http5 = http,106.56.102.108,1080
+Http5 = http,116.224.245.177,8123
+Http5 = http,115.154.38.107,8123
 
 [Proxy Group]
 Proxy = select,Http1,Http2,Http3,Http4,Http5
