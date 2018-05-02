@@ -17,7 +17,7 @@ ipv6 = false
 bypass-system = true
 
 [Proxy]
-Http_Proxy = http, 120.132.120.173, 8888, ,
+Http_Proxy = http, 120.132.120.173, 8888, ,https://cdn.qingjie.me:443/surge/ss.module
 
 #[Proxy]
 #🇭🇰 HK-SERVER1 = custom,120.132.120.173,8888,,,https://cdn.qingjie.me:443/surge/ss.module
