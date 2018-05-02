@@ -17,7 +17,7 @@ ipv6 = false
 bypass-system = true
 
 [Proxy]
-233 = http, 120.132.120.173, 8888, ,
+Http_Proxy = http, 120.132.120.173, 8888, ,
 
 #[Proxy]
 #🇭🇰 HK-SERVER1 = custom,120.132.120.173,8888,,,https://cdn.qingjie.me:443/surge/ss.module
@@ -29,9 +29,9 @@ bypass-system = true
 #🇺🇸 US-SERVER = custom,120.132.120.173,8888,,,https://cdn.qingjie.me:443/surge/ss.module
 
 [Proxy Group]
-🎲 Cluster = url-test, DIRECT, 🇭🇰 HK-SERVER1, 🇭🇰 HK-SERVER2, url = http://www.gstatic.com/generate_204, interval = 600, timeout = 5, tolerance = 200
-AS = select,DIRECT,🇭🇰 HK-SERVER1,🇭🇰 HK-SERVER2
-Proxy = select, DIRECT, 🎲 Cluster, 🇭🇰 HK-SERVER1, 🇭🇰 HK-SERVER2, 🇭🇰 HK-SERVER3, 🇰🇷 KR-SERVER, 🇯🇵 JP-SERVER1, 🇯🇵 JP-SERVER2, 🇺🇸 US-SERVER
+🎲 Cluster = url-test, DIRECT, Http_Proxy, url = http://www.gstatic.com/generate_204, interval = 600, timeout = 5, tolerance = 200
+AS = select,DIRECT,Http_Proxy
+Proxy = select, DIRECT, 🎲 Cluster
 
 
 
