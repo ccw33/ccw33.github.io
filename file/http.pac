@@ -12,6 +12,6 @@
     "+http": function(url, host, scheme) {
         "use strict";
         if (host === "127.0.0.1" || host === "::1" || host.indexOf(".") < 0) return "DIRECT";
-        return "PROXY 120.132.120.173:8888";
+        return "PROXY 120.132.120.1733:8888";
     }
 });
