@@ -1,31 +1,7 @@
-﻿[General]
-// Auto
+﻿﻿[General]
+skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local
+bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 loglevel = notify
-dns-server = system,1.2.4.8,80.80.80.80,80.80.81.81,1.1.1.1,1.0.0.1
-skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,100.64.0.0/10,17.0.0.0/8,localhost,*.local,::ffff:0.0.0.0/1,::ffff:128.0.0.0/1
-
-// iOS
-allow-wifi-access = true
-
-external-controller-access = lhie1@0.0.0.0:6170
-
-// macOS
-interface = 0.0.0.0
-socks-interface = 0.0.0.0
-port = 8888
-socks-port = 8889
-
-enhanced-mode-by-rule = false
-
-// Auto
-allow-udp-proxy = true
-collapse-policy-group-items = true
-exclude-simple-hostnames = true
-hide-apple-request = true
-hide-crashlytics-request = true
-ipv6 = true
-replica = false
-use-keyword-filter = false
 
 [Proxy]
 http0 = http,119.27.177.238,8080
