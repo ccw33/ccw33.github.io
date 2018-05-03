@@ -16,7 +16,7 @@ http8 = http,175.6.2.174,8088
 http9 = http,116.6.138.98,8888
 http10 = http,106.56.102.108,1080
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
-#aaa
+
 [Proxy Group]
 Proxy = url-test, http0 ,http1 ,http2 ,http3 ,http4 ,http5 ,http6 ,http7 ,http8 ,http9 ,http10 , url = http://www.google.com/generate_204
 Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
