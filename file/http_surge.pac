@@ -20,7 +20,7 @@ Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.
 [Proxy Group]
 Proxy = url-test, http0 ,http1 ,http2 ,http3 ,http4 ,http5 ,http6 ,http7 ,http8 ,http9 ,http10 , url = http://www.google.com/generate_204
 Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
-
+#qqq
 [Rule]
 DOMAIN-SUFFIX,ad.sina.com.cn,REJECT
 DOMAIN-SUFFIX,adm.leju.sina.com.cn,REJECT
