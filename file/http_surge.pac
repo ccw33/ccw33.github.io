@@ -4,21 +4,22 @@ bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 loglevel = notify
 
 [Proxy]
-http0 = http,119.27.177.238,8080
-http1 = http,115.154.38.107,8123
-http2 = http,202.116.160.104,3128
-http3 = http,118.251.35.202,8888
-http4 = http,183.63.254.253,1080
-http5 = http,120.132.120.173,8888
-http6 = http,116.224.245.177,8123
-http7 = http,202.117.97.239,8123
-http8 = http,175.6.2.174,8088
-http9 = http,116.6.138.98,8888
-http10 = http,106.56.102.108,1080
+http0 = http,183.63.254.253,1080
+http1 = http,175.6.2.174,8088
+http2 = http,219.246.33.11,1080
+http3 = http,115.154.38.107,8123
+http4 = http,106.56.102.108,1080
+http5 = http,202.117.97.239,8123
+http6 = http,202.116.160.104,3128
+http7 = http,116.224.245.177,8123
+http8 = http,118.251.35.202,8888
+http9 = http,119.27.177.238,8080
+http10 = http,120.132.120.173,8888
+http11 = http,116.6.138.98,8888
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
-Proxy = url-test, http0 ,http1 ,http2 ,http3 ,http4 ,http5 ,http6 ,http7 ,http8 ,http9 ,http10 , url = http://www.google.com/generate_204
+Proxy = url-test, http0 ,http1 ,http2 ,http3 ,http4 ,http5 ,http6 ,http7 ,http8 ,http9 ,http10 ,http11 , url = http://www.google.com/generate_204
 Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
 
 [Rule]
