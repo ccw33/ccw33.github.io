@@ -31,7 +31,6 @@ Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
 
 # Apple
 
-URL-REGEX,*apple.com/cn,DIRECT
 
 PROCESS-NAME,storedownloadd,DIRECT // Mac App Store
 
@@ -728,8 +727,6 @@ DOMAIN-SUFFIX,wisepush.video.baidu.com,REJECT
 DOMAIN-SUFFIX,wm.baidu.com,REJECT
 DOMAIN-SUFFIX,wn.pos.baidu.com,REJECT
 DOMAIN-SUFFIX,znsv.baidu.com,REJECT
-URL-REGEX,api\d\.tuisong\.baidu\.com,REJECT
-URL-REGEX,sa\d\.tuisong\.baidu\.com,REJECT
 
 // Book
 DOMAIN-SUFFIX,70e.com,REJECT
@@ -935,8 +932,6 @@ DOMAIN-SUFFIX,jebe.renren.com,REJECT
 DOMAIN-SUFFIX,jebe.xnimg.cn,REJECT
 
 // Sendanywhere
-URL-REGEX,http:\/\/notice\.send-anywhere\.com\/banner,REJECT
-URL-REGEX,http:\/\/\w+\.cloudfront\.net\/banner,REJECT
 
 // Sina
 DOMAIN-SUFFIX,2016.sina.cn,REJECT
@@ -1022,11 +1017,6 @@ DOMAIN-SUFFIX,woocall.sina.com.cn,REJECT
 DOMAIN-SUFFIX,zc.biz.weibo.com,REJECT
 DOMAIN-SUFFIX,zymo.mps.weibo.com,REJECT
 
-URL-REGEX,ad\d\.sina\.com,REJECT
-URL-REGEX,ad\d\.sina\.com.cn,REJECT
-URL-REGEX,d\d\.sina\.com\.cn,REJECT
-URL-REGEX,d\d\.sinaimg\.cn,REJECT
-URL-REGEX,sax\d\.sina\.com\.cn,REJECT
 
 // Sogou
 DOMAIN-SUFFIX,123.sogou.com,REJECT
@@ -5393,7 +5383,6 @@ DOMAIN-SUFFIX,bbc.co,PROXY
 DOMAIN-SUFFIX,bbc.com,PROXY
 
 // Japan
-URL-REGEX,*\.jp,PROXY
 
 // Line
 DOMAIN-SUFFIX,lin.ee,PROXY
@@ -6376,11 +6365,6 @@ DOMAIN-SUFFIX,zimuzu.tv,DIRECT
 
 // Accelerate direct sites
 DOMAIN-KEYWORD,torrent,DIRECT
-URL-REGEX,(Subject|HELO|SMTP),DIRECT
-URL-REGEX,(api|ps|sv|offnavi|newvector|ulog\.imap|newloc)(\.map|)\.(baidu|n\.shifen)\.com,DIRECT
-URL-REGEX,(.+\.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan)\.(cn|com),DIRECT
-URL-REGEX,(ed2k|torrent|\.torrent|peer_id=|announce|info_hash|get_peers|find_node|BitTorrent|announce_peer|protocol|announce\.php\?passkey=|magnet:|xunlei|sandai|Thunder|XLLiveUD|bt_key),DIRECT
-URL-REGEX,/^.*@(guerrillamail\.(info|biz|com|de|net|org)|guerrillamailblock\.com|sharklasers\.com|grr\.la|pokemail\.net|spam4\.me|(mail\.)?bccto\.me|chacuo\.net|027168\.com)$/i,DIRECT
 
 // LAN,debugging rules should place above this line
 DOMAIN-SUFFIX,local,DIRECT
