@@ -96,7 +96,7 @@ IP-CIDR,17.0.0.0/8,DIRECT,no-resolve
 
 # Ads in Video apps
 
-// iqiyi
+// iqiyiaaa
 DOMAIN-SUFFIX,a.ckm.iqiyi.com,REJECT
 DOMAIN-SUFFIX,ad.m.iqiyi.com,REJECT
 DOMAIN-SUFFIX,afp.iqiyi.com,REJECT
