@@ -1,5 +1,4 @@
-﻿
-[General]
+﻿[General]
 skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, 100.64.0.0/10, localhost, *.local
 bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 loglevel = notify
@@ -14,11 +13,13 @@ Http6 = http,106.56.102.108,1080
 Http7 = http,116.224.245.177,8123
 Http8 = http,115.154.38.107,8123
 
+Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
+
 [Proxy Group]
-Proxy = select,Http1,Http2,Http3,Http4,Http5,Http6,Http7,Http8
+Proxy = url-test, Http1, Http2, Http3, Http4, Http5, Http6, Http7, Http8, url = http://www.google.com/generate_204
+Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
 
 [Rule]
-# sina
 DOMAIN-SUFFIX,ad.sina.com.cn,REJECT
 DOMAIN-SUFFIX,adm.leju.sina.com.cn,REJECT
 DOMAIN-SUFFIX,atm.sina.com,REJECT
@@ -27,8 +28,6 @@ DOMAIN-SUFFIX,dcads.sina.com.cn,REJECT
 DOMAIN-SUFFIX,sax.sina.cn,REJECT
 DOMAIN-SUFFIX,sax.sina.com.cn,REJECT
 DOMAIN-SUFFIX,tjs.sjs.sinajs.cn,REJECT
-
-# QQ
 DOMAIN-SUFFIX,act.qq.com,REJECT
 DOMAIN-SUFFIX,adsfile.qq.com,REJECT
 DOMAIN-SUFFIX,beacon.qq.com,REJECT
@@ -43,8 +42,6 @@ DOMAIN-SUFFIX,pingtcss.qq.com,REJECT
 DOMAIN-SUFFIX,report.qq.com,REJECT
 DOMAIN-SUFFIX,tajs.qq.com,REJECT
 DOMAIN-SUFFIX,tcss.qq.com,REJECT
-
-# 360
 DOMAIN-SUFFIX,3600.com,REJECT
 DOMAIN-SUFFIX,dev.tg.wan.360.cn,REJECT
 DOMAIN-SUFFIX,f.360.cn,REJECT
@@ -56,8 +53,6 @@ DOMAIN-SUFFIX,soft.data.weather.360.cn,REJECT
 DOMAIN-SUFFIX,stat.360safe.com,REJECT
 DOMAIN-SUFFIX,stat.m.360.cn,REJECT
 DOMAIN-SUFFIX,update.360safe.com,REJECT
-
-# 163
 DOMAIN-SUFFIX,adgeo.163.com,REJECT
 DOMAIN-SUFFIX,bobo.163.com,REJECT
 DOMAIN-SUFFIX,fa.163.com,REJECT
@@ -71,8 +66,6 @@ DOMAIN-SUFFIX,rlogs.youdao.com,REJECT
 DOMAIN-SUFFIX,static.flv.uuzuonline.com,REJECT
 DOMAIN-SUFFIX,wanproxy.127.net,REJECT
 DOMAIN-SUFFIX,ws.126.net,REJECT
-
-# Ads in Video apps
 DOMAIN-SUFFIX,actives.youku.com,REJECT
 DOMAIN-SUFFIX,ad.api.3g.tudou.com,REJECT
 DOMAIN-SUFFIX,ad.api.3g.youku.com,REJECT
@@ -137,8 +130,6 @@ DOMAIN-SUFFIX,tns.simba.taobao.com,REJECT
 DOMAIN-SUFFIX,traffic.uusee.com,REJECT
 DOMAIN-SUFFIX,union.6.cn,REJECT
 IP-CIDR,123.125.117.0/22,REJECT,no-resolve
-
-# Proxy 2016.6.2
 DOMAIN-KEYWORD,facebook,Proxy,force-remote-dns
 DOMAIN-KEYWORD,gmail,Proxy,force-remote-dns
 DOMAIN-KEYWORD,google,Proxy,force-remote-dns
@@ -151,19 +142,16 @@ DOMAIN-KEYWORD,jackd,Proxy,force-remote-dns
 DOMAIN-SUFFIX,scdn.co,Proxy,force-remote-dns
 DOMAIN-KEYWORD,akamaihd,Proxy,force-remote-dns
 DOMAIN-SUFFIX,cdninstagram.com,Proxy,force-remote-dns
-
 DOMAIN-SUFFIX,line-cdn.net,Proxy
 DOMAIN-SUFFIX,line-apps.com,Proxy
 DOMAIN-SUFFIX,line.me,Proxy
 DOMAIN-SUFFIX,line.naver.jp,Proxy
-
 DOMAIN-SUFFIX,netflix.com,Proxy
 DOMAIN-SUFFIX,netflix.net,Proxy
 DOMAIN-SUFFIX,nflxext.com,Proxy
 DOMAIN-SUFFIX,nflximg.com,Proxy
 DOMAIN-SUFFIX,nflximg.net,Proxy
 DOMAIN-SUFFIX,nflxvideo.net,Proxy
-
 DOMAIN-KEYWORD,amazon,Proxy
 DOMAIN-KEYWORD,appledaily,Proxy
 DOMAIN-KEYWORD,blogspot,Proxy
@@ -305,18 +293,13 @@ DOMAIN-SUFFIX,wsj.net,Proxy
 DOMAIN-SUFFIX,yahoo.com,Proxy
 DOMAIN-SUFFIX,youtu.be,Proxy
 DOMAIN-SUFFIX,ytimg.com,Proxy
-
-// Telegram
 IP-CIDR,91.108.56.0/22,Proxy,no-resolve
 IP-CIDR,91.108.4.0/22,Proxy,no-resolve
 IP-CIDR,109.239.140.0/24,Proxy,no-resolve
 IP-CIDR,149.154.160.0/20,Proxy,no-resolve
-
-# LAN
 IP-CIDR,192.168.0.0/16,DIRECT
 IP-CIDR,10.0.0.0/8,DIRECT
-IP-CIDR,100.64.0.0/10, DIRECT
+IP-CIDR,100.64.0.0/10,DIRECT
 IP-CIDR,172.16.0.0/12,DIRECT
 IP-CIDR,127.0.0.0/8,DIRECT
-
 FINAL,DIRECT
