@@ -11,12 +11,11 @@ Http4 = http,115.154.38.107,8123
 Http5 = http,202.116.160.104,3128
 Http6 = http,106.56.102.108,1080
 Http7 = http,116.224.245.177,8123
-Http8 = http,115.154.38.107,8123
 
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
-Proxy = url-test, Http1, Http2, Http3, Http4, Http5, Http6, Http7, Http8, url = http://www.google.com/generate_204
+Proxy = url-test, Http1, Http2, Http3, Http4, Http5, Http6, Http7, url = http://www.google.com/generate_204
 Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
 
 [Rule]
