@@ -4,47 +4,20 @@ bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 loglevel = notify
 
 [Proxy]
-http0 = http,218.66.253.144,8800
-http1 = http,120.92.119.229,10018
-http2 = http,221.204.235.35,9090
-http3 = http,120.92.118.127,8080
-http4 = http,183.224.35.101,8123
-http5 = http,39.108.17.131,9090
-http6 = http,117.78.50.121,8118
-http7 = http,220.249.96.135,8089
-http8 = http,118.24.46.154,808
-http9 = http,121.225.25.35,3128
-http10 = http,223.241.116.15,18118
-http11 = http,61.178.238.122,63000
-http12 = http,14.215.224.254,3128
-http13 = http,120.79.133.212,8088
-http14 = http,60.166.19.218,63000
-http15 = http,60.29.106.60,18000
-http16 = http,111.231.0.74,8118
-http17 = http,120.92.118.64,10018
-http18 = http,211.142.221.131,8080
-http19 = http,60.165.54.144,8060
-http20 = http,218.66.253.145,8800
-http21 = http,183.224.35.101,8080
-http22 = http,122.114.227.74,808
-http23 = http,118.212.137.135,31288
-http24 = http,180.110.5.31,3128
-http25 = http,210.83.207.134,18118
-socks426 = socks4,36.74.202.56,1080
-http27 = http,218.66.253.146,8800
-http28 = http,114.67.228.22,8118
-http29 = http,42.62.51.43,8118
-http30 = http,120.92.119.229,10000
-http31 = http,120.92.119.187,10010
-http32 = http,120.132.120.173,8888
-http33 = http,119.39.48.205,9090
-http34 = http,219.245.18.63,3128
-http35 = http,120.92.117.94,10018
-http36 = http,202.98.197.245,3128
+http0 = http,117.68.193.113,18118
+http1 = http,183.159.93.177,18118
+http2 = http,111.40.84.73,9999
+http3 = http,210.5.149.43,8090
+http4 = http,119.115.235.131,8118
+http5 = http,171.88.53.41,9999
+http6 = http,119.29.185.79,8080
+http7 = http,60.29.106.60,18000
+http8 = http,222.92.194.154,18000
+http9 = http,120.132.120.173,8888
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
-Proxy = url-test, http0 ,http1 ,http2 ,http3 ,http4 ,http5 ,http6 ,http7 ,http8 ,http9 ,http10 ,http11 ,http12 ,http13 ,http14 ,http15 ,http16 ,http17 ,http18 ,http19 ,http20 ,http21 ,http22 ,http23 ,http24 ,http25 ,socks426 ,http27 ,http28 ,http29 ,http30 ,http31 ,http32 ,http33 ,http34 ,http35 ,http36 , url = http://www.google.com/generate_204
+Proxy = url-test, http0 ,http1 ,http2 ,http3 ,http4 ,http5 ,http6 ,http7 ,http8 ,http9 , url = http://www.google.com/generate_204
 Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
 
 [Rule]
