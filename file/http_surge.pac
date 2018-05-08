@@ -4,11 +4,15 @@ bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 loglevel = notify
 
 [Proxy]
-http0 = http,183.63.254.253,1080
+socks50 = socks5,162.243.107.45,1080
+socks51 = socks5,88.198.45.52,1080
+socks52 = socks5,207.154.231.209,1080
+socks53 = socks5,77.70.89.102,15152
+http4 = http,183.63.254.253,1080
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
-Proxy = url-test, http0 , url = http://www.google.com/generate_204
+Proxy = url-test, socks50 ,socks51 ,socks52 ,socks53 ,http4 , url = http://www.google.com/generate_204
 Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
 
 [Rule]
