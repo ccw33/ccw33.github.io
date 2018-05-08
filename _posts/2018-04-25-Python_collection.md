@@ -11,7 +11,7 @@ author: 陈超文
 
 
 收集使用python时遇到的问题并解决
-
+2018-05-08 10:00:30 星期二 ———— 更新5.def new_obj_to_dic
 
 
 
@@ -148,6 +148,29 @@ from HTMLParser import HTMLParser
 ```
 #### def new_obj_to_dict
 ```python
+def default_get_result(obj,attr,to_string=True):
+    '''
+    默认的获取结果方法，以为attr有可能是属性或者function名，所以统一在这里获取结果,
+    如attr = 'name' 、 attr = 'get_name()'
+    :param obj:从此obj中获取attr相应的值，getattr(obj,attr)
+    :param attr:需要获得的obj中的属性
+    :param to_string:是否把获取的结果转为前端可用的类型
+    :return:str
+    '''
+    result = ''
+    if attr.find('()') == -1:  # 属性
+        result = getattr(obj, attr)
+    else:  # 方法
+        try:
+            result = getattr(obj, attr.replace('()', ''))()
+        except TypeError as e:  # 并不是方法，则是属性
+            result = getattr(obj, attr.replace('()', ''))
+    if to_string:
+        return parse_string(result)
+    else:
+        return result
+
+
 def new_obj_to_dict(obj, dict_temp):
     '''
     吧对象转换为dict_temp类似的dict，如：
@@ -175,68 +198,111 @@ def new_obj_to_dict(obj, dict_temp):
     '''
     # 转换
     new_dict = {}
-    for k in dict_temp:
-        if not hasattr(obj, k.replace('()', '')):  # 如果objm没有这个属性，则删除k
-            # del_keys.append(k)
-            continue
-        if isinstance(dict_temp[k], dict):
-            new_dict[k] = new_obj_to_dict(getattr(obj, k), dict_temp[k])
-            continue
+    if isinstance(dict_temp,dict):
+        for k in dict_temp:
+            if not hasattr(obj, k.replace('()', '')):  # 如果obj没有这个属性，跳过
+                # new_dict[ k.replace('()', '')] = 'undefined'
+                continue
+            if isinstance(dict_temp[k], dict):#如果值为dict,说明需要细爬
+                result = default_get_result(obj,k,False)
+                new_dict[k.replace('()', '')] = \
+                    new_obj_to_dict(result, dict_temp[k]) if result else result
+                continue
+            if isinstance(dict_temp[k], list):#如果值为list
+                new_dict[k.replace('()', '')] = new_obj_to_dict(default_get_result(obj,k,False),dict_temp[k])
+                continue
+                # if len(dict_temp[k]) == 1:#如果list里面还有dict,说明不是要每个item转成字符串，而是每个item需要继续细爬，如[{'name';'','age':''}]
+                #     new_dict[k.replace('()', '')] = [new_obj_to_dict(o, dict_temp[k][0]) for o in default_get_result(obj,k,False)]
+                # else:
+                #     # 遍历obj，每个obj parse_string一次
+                #     new_dict[k.replace('()', '')] = [parse_string(o) for o in default_get_result(obj,k)]
+                # continue
+            if callable(dict_temp[k]):  # 如果值为function，则说明需要把结果过滤一下
+                new_dict[k.replace('()', '')] = dict_temp[k](default_get_result(obj,k,False))
+                continue
 
-        if k.find('()') == -1:  # 属性
-            new_dict[k] = parse_string(getattr(obj, k))
-        else:  # 方法
-            new_dict[k.replace('()', '')] = parse_string(getattr(obj, k.replace('()', ''))())
+            new_dict[k.replace('()', '')] = default_get_result(obj,k)
 
-    return new_dict
+        return new_dict
+
+    if isinstance(dict_temp, list):#如果是list
+        #如果dict_temp里面还有dict,说明不是要每个item转成字符串，而是每个item需要继续细爬，如[{'name';'','age':''}]
+        if len(dict_temp)==1:
+            new_list = [new_obj_to_dict(o,dict_temp[0]) for o in obj]
+            return new_list
+        # 遍历obj，每个obj parse_string一次
+        new_list = [parse_string(o) for o in obj]
+        return new_list
 
 
-#调用例子：
-return row_actions_template.render(
-                {'row_actions': json.dumps( [new_obj_to_dict(action,
-                                 {'method':'',
-                                  'name':'',
-                                  'bound_url':'',
-                                  'verbose_name':'',
-                                  'attr_string_nc':'',
-                                  'action_type':'',
-                                  'icon':'',
-                                  'handles_multiple':'',
-                                  'verbose_name_plural':'',
-                                  'help_text':'',
-                                  'table': {'name': ''},
-                                  'get_param_name()':'',
-                                  'get_default_classes()':'',
-                                  'get_final_css()':'',
-                                  }
-                                 ) for action in context.dicts[1]['row_actions']]),
-                'attr_string_nc_list':[action.attr_string_nc for action in context.dicts[1]['row_actions']],
-                 'row_id': context.dicts[1]['row_id']})
+	#Usage:
+	extra_context = {'obj': json.dumps(new_obj_to_dict(self, {
+            '__str__()': '',
+            'needs_form_wrapper()': '',
+            'get_full_url()': '',
+            'get_columns()': [{
+                '__str__()': '',
+                'attr_string': '',
+                'help_text': '',
+                'get_summation()': lambda result: "&ndash;" if result == None else result
+            }],
+            'get_rows()': lambda rows: [
+                {'attr_string': parse_string(row.attr_string),
+                 'cells': [new_obj_to_dict(cell, {'inline_edit_mod': '',
+                                                  'update_allowed': '',
+                                                  'value': lambda v: v if isinstance(v, dict) else parse_string(v),
+                                                  'column': {'form_field': {'label': ''}},
+                                                  'id': '',
+                                                  'wrap_list': '',
+                                                  'attr_string': '',
+                                                  }) for cell in row]
+                 } for row in rows],
+            'slugify_name()': '',
+            'request': {'path()': ''},
+            'css_classes()': '',
+            'render_table_actions()': '',
+            'breadcrumb': {'render()': ''},
+            'is_browser_table()': '',
+            'needs_filter_first': '',
+            'get_filter_first_message()': '',
+            'get_empty_message()': '',
+            'footer': '',
+            'has_prev_data()': '',
+            'has_more_data()': '',
+            'needs_summary_row': '',
+            'get_prev_pagination_string()': '',
+            'get_pagination_string()': lambda v: v + '&ajax=true' if self.ajax_dropdown else v,
+            'ajax_dropdown':''
+        })),
+                         'hidden_title': self._meta.hidden_title,
+                         'wrapper_slugify_name': 'wrapper_' + self.slugify_name(),
+                         }
+        return table_template.render(template.RequestContext(self.request, extra_context))
+
 ```
+
 #### def parse_string
 ```python
-def parse_string(result, recursive=False):
+<pre style="background-color:#2b2b2b;color:#a9b7c6;font-family:'DejaVu Sans Mono';font-size:7.5pt;">def parse_string(result, recursive=False):
     '''
-    选择性的转成字符串
-    True ，False转成’true‘，’false'
-    None转‘’
-    tuple，set转成list，如果recursive为False(默认)里面的每个item转成字符串，如果为True，则递归转换
-    dict保持不变，如果recursive为False(默认)里面的每个value转成字符串，如果为True，则递归转换
-    :param result:
-    :return:
-    '''
-    try:
+  选择性的转成字符串
+ True ，False转成’true‘，’false'
+ None转‘’
+ tuple，set转成list，如果recursive为False(默认)里面的每个item转成字符串，如果为True，则递归转换
+ dict保持不变，如果recursive为False(默认)里面的每个value转成字符串，如果为True，则递归转换
+  :param result:  :return:
+ '''  try:
         is_list = result.__class__ == [].__class__
         is_tuple = result.__class__ == tuple().__class__
         is_set = result.__class__ == set().__class__
         is_dict = result.__class__ == dict().__class__
 
         if isinstance(result, bool):
-            result = 'true' if result else 'false'
-            return result
+            # result = 'true' if result else 'false'
+  return result
         if isinstance(result, type(None)):
-            result = ''
-            return result
+            # result = ''
+  return result
         if is_list or is_tuple or is_set:
             result = list(result)
             for index, item in enumerate(result):
@@ -244,11 +310,6 @@ def parse_string(result, recursive=False):
                     parse_string(result[index])
                 else:
                     result[index] = str(item)
-
-                    # if not isinstance(item, unicode):
-                    #     result[index] = item.__str__()
-                    # else:
-                    #     result[index] = item.encode('utf-8')
             return result
         if is_dict:
             for k, v in result.items():
@@ -256,20 +317,14 @@ def parse_string(result, recursive=False):
                     parse_string(result[k])
                 else:
                     result[k] = str(v)
-                    # if not isinstance(v, unicode):
-                    #     result[k] = v.__str__()
-                    # else:
-                    #     result[k] = v.encode('utf-8')
             return result
         result = str(result)
-
-        # if not isinstance(result, unicode):
-        #     result = result.__str__()
-        # else:
-        #     result = result.encode('utf-8')
+        return result
+    except UnicodeEncodeError as e:
+        result = result.encode('utf-8')
         return result
     except Exception as e:
-        traceback.print_exc()
+        traceback.print_exc()</pre>
 
 ```
 #### def obj_to_dict
@@ -450,10 +505,10 @@ if __name__ == '__main__':
 
 ### 6、django 模板结合vue时，context内容注意事项（编码问题）：
 1、如果渲染整个dict或list时，中文会出现乱码，但是循环渲染dict或list，则中文能正常显示。
-    那是因为django模板渲染时，如{{ obj }}，如果obj是一个方法，则会调用这个方法；否则，会渲染为str(obj)，如str(['等发达','代收费wav'])会渲染为"['\\xe7\\xad\\x89\\xe5\\x8f\\x91\\xe8\\xbe\\xbe', '\\xe4\\xbb\\xa3\\xe6\\x94\\xb6\\xe8\\xb4\\xb9wav']"（多了一个\）。
-    我们从编码与解码的文章中知道str(str)是没用的，所以能正常显示中文
+    那是因为django模板渲染时，如{{ obj }}，如果obj是一个方法，则会调用这个方法；否则，会渲染为str(obj)，如str(['等发达','代收费wav'])会渲染为"['\\xe7\\xad\\x89\\xe5\\x8f\\x91\\xe8\\xbe\\xbe', '\\xe4\\xbb\\xa3\\xe6\\x94\\xb6\\xe8\\xb4\\xb9wav']"（多了一个\）。
+    我们从编码与解码的文章中知道str(str)是没用的，所以能正常显示中文
 
-    如果要渲染整个dict或list的同时保证其中的中文正常显示，要通过json.dumps把整个dict或list转成字符串，然后再模板中整个渲染即可
+    如果要渲染整个dict或list的同时保证其中的中文正常显示，要通过json.dumps把整个dict或list转成字符串，然后再模板中整个渲染即可
 #### 例子：
 ##### 后端代码：
 row_actions是json字符串，会在前端直接渲染为js对象
