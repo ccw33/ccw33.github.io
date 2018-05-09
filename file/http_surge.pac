@@ -4,15 +4,33 @@ bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 loglevel = notify
 
 [Proxy]
-socks50 = socks5,162.243.107.45,1080
-socks51 = socks5,88.198.45.52,1080
-socks52 = socks5,207.154.231.209,1080
-socks53 = socks5,77.70.89.102,15152
-http4 = http,183.63.254.253,1080
+http0 = http,223.241.116.64,18118
+http1 = http,39.134.68.7,80
+http2 = http,220.249.96.135,8089
+http3 = http,221.204.235.35,9090
+http4 = http,117.68.193.169,18118
+http5 = http,39.134.68.10,80
+http6 = http,223.241.117.128,18118
+http7 = http,39.134.68.24,80
+http8 = http,218.66.253.144,80
+http9 = http,222.92.194.150,80
+http10 = http,222.92.194.154,80
+http11 = http,222.92.194.154,18000
+http12 = http,222.66.90.104,80
+http13 = http,60.29.106.60,18000
+http14 = http,153.35.185.71,80
+http15 = http,59.67.152.230,3128
+http16 = http,221.122.91.60,80
+http17 = http,221.122.91.34,80
+http18 = http,221.122.91.61,80
+http19 = http,221.122.91.65,80
+http20 = http,221.122.91.59,80
+http21 = http,221.122.91.66,80
+http22 = http,221.122.91.64,80
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
-Proxy = url-test, socks50 ,socks51 ,socks52 ,socks53 ,http4 , url = http://www.google.com/generate_204
+Proxy = url-test, http0 ,http1 ,http2 ,http3 ,http4 ,http5 ,http6 ,http7 ,http8 ,http9 ,http10 ,http11 ,http12 ,http13 ,http14 ,http15 ,http16 ,http17 ,http18 ,http19 ,http20 ,http21 ,http22 , url = http://www.google.com/generate_204
 Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
 
 [Rule]
