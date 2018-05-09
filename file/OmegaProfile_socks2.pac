@@ -8,10 +8,10 @@
         } while (typeof result !== "string" || result.charCodeAt(0) === 43);
         return result;
     };
-}("+http", {
-    "+http": function(url, host, scheme) {
+}("+socks2", {
+    "+socks2": function(url, host, scheme) {
         "use strict";
-        if (host === "127.0.0.1" || host === "::1" || host.indexOf(".") < 0) return "DIRECT";
-        return "PROXY 120.132.120.173:8888";
+        if (/^127\.0\.0\.1$/.test(host) || /^::1$/.test(host) || /^localhost$/.test(host)) return "DIRECT";
+        return "SOCKS5 75.97.107.190:25326; SOCKS 75.97.107.190:25326";
     }
 });
