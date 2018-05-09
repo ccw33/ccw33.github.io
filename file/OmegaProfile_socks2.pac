@@ -6903,7 +6903,7 @@
         if (scheme === "http" && url.indexOf("q%3DTriangle") >= 0) return "+proxy";
         if (scheme === "http" && url.indexOf("ultrareach") >= 0) return "+proxy";
         if (scheme === "http" && url.indexOf("ultrasurf") >= 0) return "+proxy";
-        return "DIRECT";
+        return "+proxy";
     },
     "+proxy": function(url, host, scheme) {
         "use strict";
