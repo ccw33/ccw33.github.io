@@ -4,44 +4,33 @@ bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 loglevel = notify
 
 [Proxy]
-socks50 = socks5,95.110.224.30,18883
-socks51 = socks5,95.110.229.182,17990
-socks52 = socks5,167.99.193.191,8088
-socks53 = socks5,52.236.39.7,1080
-socks54 = socks5,95.110.224.30,40491
-socks55 = socks5,95.110.224.30,57400
-socks56 = socks5,185.53.170.135,1088
-socks57 = socks5,172.247.109.4,1080
-socks58 = socks5,95.110.224.30,21845
-socks59 = socks5,95.110.224.30,31913
-socks510 = socks5,121.127.232.57,1080
-socks511 = socks5,95.110.224.30,32345
-socks512 = socks5,95.110.194.245,64967
-socks513 = socks5,97.74.230.244,38092
-socks514 = socks5,92.222.96.229,9229
-socks515 = socks5,95.110.224.30,20546
-socks516 = socks5,176.58.109.42,1080
-socks517 = socks5,31.220.7.159,1080
-socks518 = socks5,167.99.139.100,1080
-socks519 = socks5,192.169.136.151,64071
-socks520 = socks5,88.247.79.93,1080
-socks521 = socks5,80.211.151.99,1080
-socks522 = socks5,178.140.217.97,39880
-socks523 = socks5,94.130.124.204,1080
-socks524 = socks5,95.110.186.48,48951
-socks525 = socks5,92.222.68.232,1080
-socks526 = socks5,95.110.224.30,15232
-socks527 = socks5,23.111.24.244,1080
-socks528 = socks5,94.130.249.218,1080
-socks529 = socks5,95.110.186.48,26864
-socks530 = socks5,98.162.25.29,31679
-socks531 = socks5,208.74.213.29,11367
-socks532 = socks5,95.110.224.30,15859
-socks533 = socks5,95.110.186.48,59537
+socks50 = socks5,31.220.7.159,1080
+socks51 = socks5,97.74.230.244,64385
+socks52 = socks5,94.130.124.204,1080
+socks53 = socks5,94.130.249.218,1080
+socks54 = socks5,167.99.139.100,1080
+socks55 = socks5,34.229.62.113,1080
+socks56 = socks5,23.111.24.244,1080
+socks57 = socks5,52.236.39.7,1080
+socks58 = socks5,167.99.193.191,8088
+socks59 = socks5,101.6.86.236,1080
+socks510 = socks5,50.63.167.72,52223
+socks511 = socks5,88.247.79.93,1080
+socks512 = socks5,50.63.167.72,20815
+socks513 = socks5,50.63.167.72,49286
+socks514 = socks5,92.222.68.232,1080
+socks515 = socks5,172.247.109.4,1080
+socks516 = socks5,50.63.167.72,61846
+socks517 = socks5,98.162.25.29,31679
+socks518 = socks5,95.110.186.48,48951
+socks519 = socks5,95.110.224.30,20546
+socks520 = socks5,95.110.224.30,57400
+socks521 = socks5,92.222.96.229,9229
+socks522 = socks5,95.110.229.182,17990
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
-Proxy = url-test, socks50 ,socks51 ,socks52 ,socks53 ,socks54 ,socks55 ,socks56 ,socks57 ,socks58 ,socks59 ,socks510 ,socks511 ,socks512 ,socks513 ,socks514 ,socks515 ,socks516 ,socks517 ,socks518 ,socks519 ,socks520 ,socks521 ,socks522 ,socks523 ,socks524 ,socks525 ,socks526 ,socks527 ,socks528 ,socks529 ,socks530 ,socks531 ,socks532 ,socks533 , url = http://www.google.com/generate_204
+Proxy = url-test, socks50 ,socks51 ,socks52 ,socks53 ,socks54 ,socks55 ,socks56 ,socks57 ,socks58 ,socks59 ,socks510 ,socks511 ,socks512 ,socks513 ,socks514 ,socks515 ,socks516 ,socks517 ,socks518 ,socks519 ,socks520 ,socks521 ,socks522 , url = http://www.google.com/generate_204
 Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
 
 [Rule]
