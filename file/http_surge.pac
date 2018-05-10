@@ -5,23 +5,22 @@ loglevel = notify
 
 [Proxy]
 socks50 = socks5,167.99.139.100,1080
-socks51 = socks5,31.220.7.159,1080
-socks52 = socks5,34.229.62.113,1080
-socks53 = socks5,185.87.49.185,58629
-socks54 = socks5,124.195.19.18,1080
-socks55 = socks5,94.130.124.204,1080
-socks56 = socks5,50.63.167.72,52223
-socks57 = socks5,101.6.86.236,1080
-socks58 = socks5,80.211.186.30,1080
-socks59 = socks5,75.97.107.190,25326
-socks510 = socks5,95.110.229.182,17990
-socks511 = socks5,50.63.167.72,20815
+socks51 = socks5,34.229.62.113,1080
+socks52 = socks5,97.74.230.244,6747
+socks53 = socks5,94.130.124.204,1080
+socks54 = socks5,198.27.88.209,1080
+socks55 = socks5,101.6.86.236,1080
+socks56 = socks5,124.195.19.18,1080
+socks57 = socks5,50.63.167.72,52223
+socks58 = socks5,31.220.7.159,1080
+socks59 = socks5,80.211.186.30,1080
+socks510 = socks5,185.87.49.185,58629
+socks511 = socks5,95.110.229.182,17990
 socks512 = socks5,185.214.73.44,1080
-socks513 = socks5,95.110.186.48,48951
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
-Proxy = url-test, socks50 ,socks51 ,socks52 ,socks53 ,socks54 ,socks55 ,socks56 ,socks57 ,socks58 ,socks59 ,socks510 ,socks511 ,socks512 ,socks513 , url = http://www.google.com/generate_204
+Proxy = url-test, socks50 ,socks51 ,socks52 ,socks53 ,socks54 ,socks55 ,socks56 ,socks57 ,socks58 ,socks59 ,socks510 ,socks511 ,socks512 , url = http://www.google.com/generate_204
 Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
 
 [Rule]
