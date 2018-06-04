@@ -5,25 +5,25 @@ loglevel = notify
 
 [Proxy]
 socks50 = socks5,80.211.186.30,1080
-socks51 = socks5,95.110.186.48,41756
-socks52 = socks5,50.63.167.72,8394
-socks53 = socks5,34.229.62.113,1080
-socks54 = socks5,177.54.148.29,1883
-socks55 = socks5,34.229.62.113,1080
-socks56 = socks5,95.110.186.48,21935
+socks51 = socks5,212.19.134.166,2016
+socks52 = socks5,181.225.100.21,39880
+socks53 = socks5,149.202.38.124,32321
+socks54 = socks5,149.202.38.124,32321
+socks55 = socks5,149.202.38.124,32321
+socks56 = socks5,98.162.25.29,31679
 socks57 = socks5,34.229.62.113,1080
-socks58 = socks5,46.8.32.238,8080
-socks59 = socks5,36.7.111.92,1080
-socks510 = socks5,36.7.111.92,1080
-socks511 = socks5,98.162.25.29,31679
+socks58 = socks5,34.229.62.113,1080
+socks59 = socks5,34.229.62.113,1080
+socks510 = socks5,95.110.186.48,21935
+socks511 = socks5,46.8.32.238,8080
 socks512 = socks5,36.7.111.92,1080
-socks513 = socks5,149.202.38.124,32321
-socks514 = socks5,181.225.100.21,39880
-socks515 = socks5,149.202.38.124,32321
-socks516 = socks5,95.110.186.48,21935
-socks517 = socks5,37.59.8.29,59318
-socks518 = socks5,149.202.38.124,32321
-socks519 = socks5,212.19.134.166,2016
+socks513 = socks5,36.7.111.92,1080
+socks514 = socks5,36.7.111.92,1080
+socks515 = socks5,95.110.186.48,21935
+socks516 = socks5,50.63.167.72,8394
+socks517 = socks5,177.54.148.29,1883
+socks518 = socks5,95.110.186.48,41756
+socks519 = socks5,37.59.8.29,59318
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
