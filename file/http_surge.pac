@@ -4,30 +4,32 @@ bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 loglevel = notify
 
 [Proxy]
-socks50 = socks5,43.228.163.10,1080
-socks51 = socks5,50.63.153.173,24960
-socks52 = socks5,18.130.106.205,9999
-socks53 = socks5,132.148.130.208,42727
-socks54 = socks5,18.130.142.104,9999
-socks55 = socks5,175.115.184.27,1080
-socks56 = socks5,189.61.93.250,57543
+socks50 = socks5,18.130.147.239,9999
+socks51 = socks5,43.228.163.10,1080
+socks52 = socks5,67.197.144.165,54112
+socks53 = socks5,178.150.242.161,9050
+socks54 = socks5,60.248.223.190,3233
+socks55 = socks5,200.56.146.107,1080
+socks56 = socks5,18.130.119.111,9999
 socks57 = socks5,18.130.121.17,9999
-socks58 = socks5,18.130.72.107,9999
-socks59 = socks5,18.130.67.24,9999
-socks510 = socks5,18.130.2.174,9999
-socks511 = socks5,139.130.228.72,40780
-socks512 = socks5,18.130.147.239,9999
-socks513 = socks5,185.81.96.184,1080
-socks514 = socks5,103.216.82.205,6667
-socks515 = socks5,113.31.18.20,7777
-socks516 = socks5,60.248.223.190,3256
-socks517 = socks5,200.56.146.107,1080
-socks518 = socks5,18.130.106.133,9999
-socks519 = socks5,201.16.148.225,1080
+socks58 = socks5,177.70.160.86,6667
+socks59 = socks5,60.248.223.190,3256
+socks510 = socks5,78.155.219.48,8000
+socks511 = socks5,18.130.161.175,9999
+socks512 = socks5,162.244.35.50,8888
+socks513 = socks5,18.130.142.104,9999
+socks514 = socks5,192.169.218.61,13660
+socks515 = socks5,50.63.153.173,23332
+socks516 = socks5,18.130.67.24,9999
+socks517 = socks5,76.16.120.118,4100
+socks518 = socks5,18.130.106.205,9999
+socks519 = socks5,50.63.153.173,6176
+socks520 = socks5,192.169.202.104,35766
+socks521 = socks5,113.31.18.20,7777
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
-Proxy = url-test, socks50 ,socks51 ,socks52 ,socks53 ,socks54 ,socks55 ,socks56 ,socks57 ,socks58 ,socks59 ,socks510 ,socks511 ,socks512 ,socks513 ,socks514 ,socks515 ,socks516 ,socks517 ,socks518 ,socks519 , url = http://www.google.com/generate_204
+Proxy = url-test, socks50 ,socks51 ,socks52 ,socks53 ,socks54 ,socks55 ,socks56 ,socks57 ,socks58 ,socks59 ,socks510 ,socks511 ,socks512 ,socks513 ,socks514 ,socks515 ,socks516 ,socks517 ,socks518 ,socks519 ,socks520 ,socks521 , url = http://www.google.com/generate_204
 Socks_Proxy = url-test, Socks1 , url = http://www.google.com/generate_204
 
 [Rule]
