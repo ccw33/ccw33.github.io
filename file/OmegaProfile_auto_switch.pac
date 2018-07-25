@@ -7065,6 +7065,6 @@ var FindProxyForURL = function(init, profiles) {
     "+proxy": function(url, host, scheme) {
         "use strict";
         if (/^127\.0\.0\.1$/.test(host) || /^::1$/.test(host) || /^localhost$/.test(host)) return "DIRECT";
-        return "SOCKS5 125.141.67.4:1085; SOCKS 125.141.67.4:1085";
+        return "SOCKS5 192.169.250.198:40710; SOCKS 192.169.250.198:40710";
     }
 });
