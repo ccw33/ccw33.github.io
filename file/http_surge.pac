@@ -8,7 +8,7 @@ socks50 = socks5,192.169.138.184,35878
 socks51 = socks5,146.252.241.88,54948
 socks52 = socks5,18.130.106.205,9999
 socks53 = socks5,192.169.250.198,40710
-socks54 = socks5,78.129.139.48,443
+socks54 = socks5,95.110.207.71,9673
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
