@@ -5,10 +5,10 @@ loglevel = notify
 
 [Proxy]
 socks50 = socks5,103.216.82.196,6667
-socks51 = socks5,109.200.132.144,8888
-socks52 = socks5,64.118.86.56,22400
-socks53 = socks5,192.169.244.29,44168
-socks54 = socks5,132.148.130.208,53191
+socks51 = socks5,192.169.244.29,44168
+socks52 = socks5,132.148.130.208,53191
+socks53 = socks5,192.169.232.12,12158
+socks54 = socks5,192.169.218.61,2055
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
