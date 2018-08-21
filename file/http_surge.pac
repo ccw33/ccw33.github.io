@@ -4,11 +4,11 @@ bypass-tun = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 loglevel = notify
 
 [Proxy]
-socks50 = socks5,192.169.188.100,53562
-socks51 = socks5,188.120.228.252,2795
-socks52 = socks5,192.169.232.12,31261
-socks53 = socks5,192.169.140.74,20607
-socks54 = socks5,46.255.216.148,1080
+socks50 = socks5,192.169.138.184,12068
+socks51 = socks5,192.169.140.100,40880
+socks52 = socks5,222.195.66.216,1080
+socks53 = socks5,192.169.140.74,38751
+socks54 = socks5,114.67.131.222,1080
 Socks1 = custom,ss.isfrom.club,3006,aes-256-cfb,chaowen@chen,http://7xpt4s.com1.z0.glb.clouddn.com/SSEncrypt.module
 
 [Proxy Group]
