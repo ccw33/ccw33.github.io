@@ -560,3 +560,18 @@ this.attr_string_nc_list和row_id则是python的string对象
 
     </script>
 ```
+
+
+### 7、一行一行的读写
+```python
+    def common_setter(self,key,value):
+        with open('Conf.txt', 'r+') as frw:
+            lines = frw.readlines()
+            for index,line in enumerate(lines):
+                if line.split('=')[0] == key:
+                    lines[index] = "%s=%s\n" % (key,value)
+                    break
+            frw.seek(0)
+            frw.writelines(lines)
+            return
+```
