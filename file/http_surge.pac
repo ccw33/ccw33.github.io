@@ -126,6 +126,8 @@ DOMAIN-SUFFIX,tns.simba.taobao.com,REJECT
 DOMAIN-SUFFIX,traffic.uusee.com,REJECT
 DOMAIN-SUFFIX,union.6.cn,REJECT
 IP-CIDR,123.125.117.0/22,REJECT,no-resolve
+DOMAIN-KEYWORD,pornhub,Proxy,force-remote-dns
+DOMAIN-KEYWORD,xvideo,Proxy,force-remote-dns
 DOMAIN-KEYWORD,facebook,Proxy,force-remote-dns
 DOMAIN-KEYWORD,gmail,Proxy,force-remote-dns
 DOMAIN-KEYWORD,google,Proxy,force-remote-dns
