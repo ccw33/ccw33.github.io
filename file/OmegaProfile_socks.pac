@@ -12,6 +12,6 @@ var FindProxyForURL = function(init, profiles) {
     "+socks": function(url, host, scheme) {
         "use strict";
         if (/^127\.0\.0\.1$/.test(host) || /^::1$/.test(host) || /^localhost$/.test(host)) return "DIRECT";
-        return "SOCKS5 50.63.153.173:46421; SOCKS 50.63.153.173:46421";
+        return "SOCKS5 50.62.35.225:16040; SOCKS 50.62.35.225:16040";
     }
 });
