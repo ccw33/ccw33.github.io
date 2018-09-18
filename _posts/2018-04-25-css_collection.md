@@ -113,3 +113,26 @@ author: 陈超文
 }
 
 ```
+
+
+
+uodated_at:  2018-09-18 09:24:21 星期二
+# 布局准则：
+- 外部容器尽量用inline-flex，用base-line和center对齐，wrap自动换行，而且不要规定高度
+- 除了最里面的组件之外尽量不要规定大小
+# div按照背景图片的比例缩放（即高是宽的百分比）
+- 首先查看图片的宽高比，如果高是宽的44.2%，那么就设置div的padding-bottom：44%（尽量小一点），size为宽100%，高auto（默认就是auto）
+如（代码为sass）：
+```sass
+    .banner {
+      padding-bottom: 44%;
+      background: {
+        image: url("/static/img/homepage/twitter-292988_1280_3.jpg");
+        size: 100% auto;
+      }
+    }
+```
+# 居中
+- 上下居中：        margin: auto 0 auto 0;
+- 左右雨中：        margin: 0 auto 0 auto;
+-上下左右居中：        margin: auto auto auto auto;
