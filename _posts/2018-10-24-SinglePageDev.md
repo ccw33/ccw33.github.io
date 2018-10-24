@@ -15,50 +15,9 @@ author: 陈超文
 
 
 
-# Vue中的对象赋值问题
-由于 let obj_a = obj_b 并不是对象复制，而是让obj_a和obj_b指向同一个对象，当其中修改其中一个的时候，其实是修改同一个对象。
-因此vue中应该尽量少使用
-```javascript
-props: {
-      lan_data: {
-        type: Object,
-        required: true,
-        validator: function (value) {
-          return true;
-        }
-      },
-    },
-data() {
-      return {
-        lan:this.lan_data,
-      }
-    },
-```
-因为修改子组件的lan的时候也会修改父组件的lan_data'
-**PS:**但是可以利用这个特点同步父子组件的属性，不需要使用事件通知父组件这么麻烦
-## 解决方案
-所有对象都是逐个属性的复制：
-```javascript
-new_obj = {...obj}
-
-// 或者
-  // 对象复制方法，包括数组
-  copy(obj) {
-    if (!(obj instanceof Object)) {
-      return obj;
-    }
-    if (obj instanceof Array) {
-      let newobj = Array(obj.length);
-      for (let index in obj) {
-        newobj[index] = this.copy(obj[index])
-      }
-      return newobj;
-    } else {
-      let newobj = {};
-      for (var attr in obj) {
-        newobj[attr] = this.copy(obj[attr]);
-      }
-      return newobj;
-    }
-  }
-```
+# 后端无法获取session
+那是因为webpack使用axios时，开发模式下异步提交不会带cookie，所以需要在前端axios设置credential，后端要设置接收跨域请求(因为webpack的开发服务器与后台真正的服务器不同源)与credentia。 详情请看：[前后端分离session问题](https://blog.csdn.net/fwk19840301/article/details/80675547 "前后端分离session问题")
+# 前端无法获取cookie
+当webpack开发服务器与后端服务器不在同一个ip上时，ajax响应就不会带有set-cookie的header，所以开发时应都在同一个服务器上
+#使用axios的post时无法跨域（已设置好以上两点）
+可能应为在restful中post是创建资源，所以axios禁止post跨域。开发中用还是get比较方便
