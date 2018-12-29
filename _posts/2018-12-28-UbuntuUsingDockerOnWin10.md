@@ -27,8 +27,13 @@ author: 陈超文
 # 安装win10内置ubuntu
 	参考：https://zhuanlan.zhihu.com/p/37643715
 # 设置ubuntu上的DOCKER_HOST环境变量
-	#Connetc to docker-ce on Windows
-	export DOCKER_HOST=tcp://127.0.0.1:2375
+vi ~/.bashrc，内容为：
+```
+#Connetc to docker-ce on Windows
+export DOCKER_HOST=tcp://127.0.0.1:2375
+```
+
+
 # OK，可以直接使用docker调用windows的docker-ce
 # 注意事项
 ## 路径映射
